@@ -1,27 +1,17 @@
+import random
 
+def play():
+    user = input("What's your choise? R for rock, P for paper, S for scissors\n")
+    computer = random.choice(["r", "p", "s"])
 
-from itertools import combinations_with_replacement
-from string import ascii_letters
+    if user == computer:
+        return "It\'s a tie"
 
+    if is_win(user, computer):
+        return "You won!"   
+    return "You lost!"
 
-word = "The lazy dog jumped over the quick brown fox"
-print(" ")
-print("Word input: %s" % (word))
-message = ""
-shift = 2
-
-
-for char in word:
-    i = ord(char)
-    i += shift
-    if i > ord("z"):
-        i -= 26
-    
-    character = chr(i)
-    message += character
-
-    result = message.replace('"', " ")
-
-
-print("Word output: %s" % (result))
-print(" ")
+def is_win(player, opponent):
+    if (player == "r" and opponent == "s") or (player == "s" and opponent == "p") \
+        or (player == "p" and opponent == "r"):
+        return True
