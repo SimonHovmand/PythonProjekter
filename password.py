@@ -20,4 +20,5 @@ month = calendar.month_abbr[datetime.today().month]
 year = datetime.now().strftime('%Y')
 
 password = month + "." + uppercaseLetter1 + uppercaseLetter2 + "." + number1 + specialsign + number2 + "." + lowercaseLetter1 + lowercaseLetter2 + "." + year
+
 print(password)
