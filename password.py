@@ -1,24 +1,18 @@
+from pickle import TRUE
 
-import random
-from time import strftime
+password = "2022"
 
-import calendar
-from datetime import datetime
+login = False
 
-uppercaseLetter1=chr(random.randint(65,90))
-uppercaseLetter2=chr(random.randint(65,90))
+falsecount = 0
 
-lowercaseLetter1=chr(random.randint(97,122))
-lowercaseLetter2=chr(random.randint(97,122))
+while login == False:
 
-number1=chr(random.randint(48,57))
-number2=chr(random.randint(48,57))
+    user_password = input("Hvad er dit password?\n")
 
-specialsign=chr(random.randint(33,47))
-
-month = calendar.month_abbr[datetime.today().month]
-year = datetime.now().strftime('%Y')
-
-password = month + "." + uppercaseLetter1 + uppercaseLetter2 + "." + number1 + specialsign + number2 + "." + lowercaseLetter1 + lowercaseLetter2 + "." + year
-
-print(password)
+    if user_password == password:
+        print("Password correct!\n")
+    else:
+        print("Password incorrect!\n")   
+        falsecount = falsecount + 1
+ 
