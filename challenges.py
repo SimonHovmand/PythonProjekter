@@ -10,7 +10,7 @@ for char in string:
     if i > ord("z"):
         i -= 26
    
-    character = chr(i)
+    character = chr(i)  
     message += character
 
     result = message.replace('"', " ")

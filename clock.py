@@ -3,21 +3,21 @@ import time
 
 app_window = Tk()
 app_window.title("Digital clock")
-app_window.geometry("420x150")
+app_window.geometry("960x60")
 app_window.resizable(1,1)
 
-text_font = ("Boulder", 68, "bold")
+text_font = ("Boulder", 35, "bold")
 background = "#fff"
-foregrund = "#363529"
-border_with = 25
+foregrund = "#000"
+border_with = 1
 
 label = Label(app_window, font=text_font, bg=background, fg=foregrund, bd=border_with)
 label.grid(row=0, column=1)
 
 def digital_clock():
-    time_live = time.strftime("%H:%M:%S")
+    time_live = time.strftime("%A %d. %B %y - %H:%M:%S - Day %j" )
     label.config(text=time_live)
-    label.after(200, digital_clock)
+    label.after(20, digital_clock)
 
 digital_clock()
 app_window.mainloop()
