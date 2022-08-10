@@ -15,7 +15,7 @@ label = Label(app_window, font=text_font, bg=background, fg=foregrund, bd=border
 label.grid(row=0, column=1)
 
 def digital_clock():
-    time_live = time.strftime("%A %d. %B %y - %H:%M:%S - Day %j" )
+    time_live = time.strftime("%a %d. %B %y - %H:%M:%S - Day %j" )
     label.config(text=time_live)
     label.after(20, digital_clock)
 
