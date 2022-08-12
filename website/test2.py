@@ -1,21 +1,21 @@
-import time
-
-from selenium import webdriver
-
-
-
-driver = webdriver.Chrome("C:\Program Files\Google\Chrome\Application\Chrome")  # Optional argument, if not specified will search path.
-
-driver.get("https://www.youtube.com/")
-
-time.sleep(1) # Let the user actually see something!
-
-search_box = driver.find_element_by_name('q')
-
-search_box.send_keys('ChromeDriver')
-
-search_box.submit()
-
-time.sleep(1) # Let the user actually see something!
-
-driver.quit()
+import requests
+from bs4 import BeautifulSoup
+ 
+ 
+# Making a GET request
+r = requests.get('https://www.geeksforgeeks.org/python-programming-language/')
+ 
+# Parsing the HTML
+soup = BeautifulSoup(r.content, 'html.parser')
+ 
+# Getting the title tag
+print(soup.title)
+ 
+# Getting the name of the tag
+print(soup.title.name)
+ 
+# Getting the name of parent tag
+print(soup.title.parent.name)
+ 
+# use the child attribute to get
+# the name of the child tag
