@@ -17,7 +17,7 @@ number2=chr(random.randint(48,57))
 month = calendar.month_abbr[datetime.today().month]
 year = datetime.now().strftime('%Y')
 
-sign = "-"
+sign = (input("\nHvilket specieltegn vil du bruge? "))
 
 password = month + sign + uppercaseLetter1 + lowercaseLetter1 + sign + number1 + number2 + sign + uppercaseLetter2 + lowercaseLetter2 + sign + year
 
